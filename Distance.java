@@ -1,16 +1,15 @@
-import java.util.Scanner;
-
 public class Distance {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        if (args.length < 2) {
+            System.out.println("Error: Please enter two integers like:");
+            System.out.println("java Distance 3 4");
+            return; 
+        }
 
-        System.out.print("Enter x: ");
-        int x = sc.nextInt();
+        int x = Integer.parseInt(args[0]);
+        int y = Integer.parseInt(args[1]);
 
-        System.out.print("Enter y: ");
-        int y = sc.nextInt();
-
-        double distance = Math.sqrt((x * x) + (y * y));
+        double distance = Math.sqrt(x * x + y * y);
 
         System.out.println("Distance = " + distance);
     }
